@@ -1,19 +1,29 @@
 {
-  "name": "s3uploader",
+  "name": "s3_uploader",
   "version": "0.0.1",
   "description": "Training application in node using mongodb and fake s3",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "gulp lint"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abhilashsajeev/s3Uploader.git"
+    "url": "git+https://github.com/chinmayan/s3Uploader.git"
   },
-  "author": "",
+  "author": "chinmayan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/abhilashsajeev/s3Uploader/issues"
+    "url": "https://github.com/chinmayan/s3Uploader/issues"
   },
-  "homepage": "https://github.com/abhilashsajeev/s3Uploader#readme"
+  "homepage": "https://github.com/chinmayan/s3Uploader#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-jsbeautifier": "^2.0.3",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-nodemon": "^2.0.7",
+    "gulp-util": "^3.0.7",
+    "jshint": "^2.9.2",
+    "require-dir": "^0.3.0"
+  }
 }
