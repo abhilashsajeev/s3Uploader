@@ -7,7 +7,8 @@ gulp.paths = {
     'specs/**/*.js',
     'gulp/*.js',
     'app.js',
-    'gulpfile.js'
+    'gulpfile.js',
+    'public/javascripts/*.js'
   ],
 };
 

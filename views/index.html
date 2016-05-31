@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app = "s3uploader">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script src="s3uploader.js"></script>
+  	<title></title>
+</head>
+
+<body ng-controller="fileSelection as selection">
+  <h1>S3 uploader Demo</h1>
+  <div>
+  <form ng-submit="selection.fileNameFetch()">
+	  <input type="file" size="60" id="myFile" name="pic" accept=".xlsx">
+	  <input type="submit">
+	</form>  	
+</body>
+
+</html>
