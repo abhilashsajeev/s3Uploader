@@ -16,7 +16,7 @@
     "space_before_conditional": true,
     "space_in_paren": false,
     "unescape_strings": false,
-    "wrap_line_length": 120,
+    "wrap_line_length": 110,
     "wrap-attributes-indent-size": 2,
     "wrap-attributes": "force",
     "preserve-newlines": true

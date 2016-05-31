@@ -1,8 +1,19 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
 a {
   color: #00B7FF;
 }
+
+h1 {
+	font-size: 50px;
+}
+.div_Modification input[type=file] {
+	display: inline;
+	margin-left: 10%;
+	size: 50;
+} 
+.body_Modification {
+	background-color: #808080;
+}
+/*.button_hover:hover {
+	background-color: #337ab7;
+	color: white;
+}*/

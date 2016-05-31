@@ -1,0 +1,12 @@
+<div class="container text-center div_Modification">
+  <h1>S3 Uploader</h1>
+  <p class="container text-center">
+  	<input type="file" file-model="myFile" accept=".xlsx">
+  </p>
+  <p>
+    <button class="btn btn-default btn-primary" ng-click="uploadFile()" ng-disabled="!myFile">upload me</button>	
+	</p>
+	<div class="alert alert-success" role="alert" ng-show="alertShow">
+  <a href="#" class="alert-link">File uploaded successfully!!</a>
+</div>
+</div>
