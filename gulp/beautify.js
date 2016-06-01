@@ -8,11 +8,10 @@ var paths = gulp.paths;
  * Beautify JS
  */
 
-
-        gulp.task('beautify', function () {
+gulp.task('beautify', function () {
   console.log(paths);
   gulp.src(paths.scripts[0], {
-      base: '.'
+      base: './'
     })
     .pipe(prettify({
       config: '.jsbeautifyrc',
@@ -33,4 +32,3 @@ gulp.task('beautify:build', function () {
       mode: 'VERIFY_ONLY'
     }));
 });
-

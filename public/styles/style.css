@@ -1,0 +1,18 @@
+.div_style{
+	vertical-align: middle;
+	margin-top: 15%;
+	text-align: center;
+}
+img {
+    background-image: url(pic_1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.div_style input[type=file] {
+display: inline;
+margin-left: 7%;
+} 

@@ -1,0 +1,13 @@
+  <div class ="div_style" ng-controller = "FileUploadController" >
+      <h1>File Uploader</h1>
+      <p>
+        <input type="file" file-model="myFile" accept=".xlsx,.csv">
+      </p>
+      
+      <p>
+         <button class="btn btn-primary btn-lg" ng-click = "fileUpload()" ng-disabled="!myFile">upload me</button>
+         <div class="alert alert-success" ng-show = "fileSent">
+            <strong>File uploaded successfully!</strong>
+         </div>
+      </p>
+      </div>
