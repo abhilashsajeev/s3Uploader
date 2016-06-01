@@ -1,7 +1,8 @@
 'use strict';
 
-var k = require('../config/constants.js');
 var AWS = require('aws-sdk');
+var k = require('../../config/constants.js');
+var bluebird = require('bluebird');
 
 var config = {
   s3ForcePathStyle: true,
@@ -19,9 +20,8 @@ module.exports = function (jsonObj, jsonFilePath) {
   params.Body = JSON.stringify(jsonObj);
   return client.putObject(params).promise()
     .then(function (data) {
-      // Uploading done.
-    })
-    .catch(function (err) {
-      console.error(err);
+      return data;
+    }, function (err) {
+      return bluebird.reject(err);
     });
 };
