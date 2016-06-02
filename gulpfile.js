@@ -6,6 +6,7 @@ gulp.paths = {
   scripts: [
     'app/**/*.js',
     'config/*.js',
+    'public/js/**/*.js'
   ],
 };
 

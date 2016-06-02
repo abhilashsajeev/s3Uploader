@@ -1,5 +1,3 @@
-'use strict';
-
 var AWS = require('aws-sdk');
 var k = require('../../config/constants.js');
 var bluebird = require('bluebird');
