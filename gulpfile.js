@@ -1,12 +1,15 @@
-'use strict';
-
 var gulp = require('gulp');
 
 gulp.paths = {
   scripts: ['routes/*.js',
     'gulp/*.js',
     'app.js',
-    'gulpfile.js'
+    'gulpfile.js',
+    'routes/controller/*.js',
+    'routes/services/*.js',
+    'routes/config/models/*.js',
+    'routes/config/*.js',
+    'public/js/components/*.js'
   ],
 };
 
