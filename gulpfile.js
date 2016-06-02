@@ -3,7 +3,7 @@
 var gulp = require('gulp');
 
 gulp.paths = {
-  scripts: ['routes/*.js', 'app.js','gulp/*.js']
+  scripts: ['routes/*.js', 'app.js', 'gulp/*.js', 'config/*.js', 'utils/*.js']
 };
 
 /**

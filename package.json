@@ -25,5 +25,11 @@
     "gulp-eslint": "^2.0.0",
     "gulp-jsbeautifier": "^2.0.3",
     "gulp-load-plugins": "^1.2.4"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.3.16",
+    "bluebird": "^3.4.0",
+    "lodash": "^4.13.1",
+    "xlsx": "^0.8.0"
   }
 }
