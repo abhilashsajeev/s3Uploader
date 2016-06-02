@@ -11,7 +11,7 @@ function s3Handling(s3FilePath, stringifiedJSON) {
   };
   var client = new aws.S3(config);
   var params = {
-    Bucket: 'DUCKFACENEW',
+    Bucket: 'SampleBucket',
   };
   params.Key = s3FilePath;
   params.Body = stringifiedJSON;
