@@ -1,23 +1,16 @@
 'use strict';
 
 var gulp = require('gulp');
-// var exec = require('gulp-exec');
 var nodemon = require('gulp-nodemon')
 
 gulp.paths = {
-  scripts: ['routes/*.js', 'utils/*.js'
+  scripts: ['app/**/*.js', 'public/**/*.js', 'public/*.js' 
   ],
 };
 
 gulp.task('dev-server', function() {
-  // exec('node bin/www');
-  // exec('node bin/www', function (err, stdout, stderr) {
-  //   console.log(stdout);
-  //   console.log(stderr);
-  //   cb(err);
-  // });
   nodemon({
-      script: 'bin/www',
+      script: 'server-s3',
       ext: 'js'
     });
 });
