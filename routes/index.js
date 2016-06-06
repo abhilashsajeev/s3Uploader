@@ -7,6 +7,7 @@ var AWS = require('aws-sdk');
 var multer = require('multer');
 var fs = require('fs');
 var path = require('path');
+var mongoose = require('mongoose');
 var upload = multer({
   dest: 'uploads/'
 });
@@ -24,7 +25,31 @@ var stringifiedJson;
 var jsonObject;
 var originalName;
 var categoryIDName = 'Category ID ';
-
+var Schema = mongoose.Schema;
+mongoose.connect('mongodb://localhost/my_database');
+var mongodbData = new Schema({
+  OriginalSheetName: {
+    type: String
+  },
+  SheetListName: {
+    type: String
+  },
+  CategoryID: {
+    type: String
+  },
+  Category: {
+    type: String
+  },
+  MetaTitle: {
+    type: String
+  },
+  MetaDescription: {
+    type: String
+  }
+}, {
+  timestamp: true
+});
+var mongoDataModel = mongoose.model('mongoDataModel', mongodbData);
 /* GET home page. */
 router.get('/', function (req, res, next) {
   var filePath = path.resolve(__dirname + '/../public/index.html');
@@ -45,6 +70,18 @@ router.post('/', upload.single('file'), function (req, res, next) {
         directoryPath = (jsonObject[categoryName].replace(/\s>\s|>\s/g, '/')) + '/' + jsonObject[
             categoryIDName] +
           '.json';
+        mongodbData = {
+          OriginalSheetName: originalName,
+          SheetListName: sheetName,
+          CategoryID: jsonObject[categoryIDName],
+          Category: jsonObject[categoryName],
+          MetaTitle: jsonObject[metaTitleName],
+          MetaDescription: jsonObject[MetaDescriptionName]
+        };
+        var oneMongo = new mongoDataModel(mongodbData);
+        oneMongo.save(function (err) {
+          if (!err) {}
+        });
         delete jsonObject[categoryName];
         delete jsonObject[categoryIDName];
         stringifiedJson = JSON.stringify(jsonObject);
@@ -61,7 +98,7 @@ router.post('/', upload.single('file'), function (req, res, next) {
         };
         params.Key = directoryPath;
         params.Body = stringifiedJson;
-        client.upload(params, function uploadCallback(err, data) { // upload to S3
+        client.upload(params, function uploadCallback(err, data) {
           if (!err) {}
         });
       }
