@@ -1,6 +1,6 @@
 'use strict';
 s3uploader.service('fileUpload', ['$http', function ($http) {
-  this.uploadFileToUrl = function (file, uploadUrl, callback) {
+  this.uploadFileToUrl = function (file, uploadUrl, callback, errorCallback, validationCallback) {
     var fd = new FormData();
     fd.append('file', file);
     $http.post(uploadUrl, fd, {
@@ -10,10 +10,16 @@ s3uploader.service('fileUpload', ['$http', function ($http) {
         }
       })
       .success(function (data) {
-        if (callback) {
-          callback();
+        if (data.message === 'Invalid') {
+          validationCallback();
+        } else {
+          callback(data);
         }
       })
-      .error(function (err) {});
+      .error(function (err) {
+        if (errorCallback) {
+          errorCallback();
+        }
+      });
   };
 }]);

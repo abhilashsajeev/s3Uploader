@@ -11,9 +11,29 @@ h1 {
 	size: 50;
 } 
 .body_Modification {
-	background-color: #808080;
+	background-color: #e6e6e6;
 }
-/*.button_hover:hover {
-	background-color: #337ab7;
-	color: white;
-}*/
+.header-bottom {
+    margin-bottom: 0px;
+}
+
+.header {
+    padding-bottom: 0px;
+    margin: 0px;
+}
+h2 {
+	margin-top: 10px;
+}
+.progressBar-align {
+}
+.div_center {
+	text-align: center;
+}
+.floatToRight {
+	float:right;
+}
+.textAreaStyling {
+	width:100%;
+	height:100%;
+	resize:none;
+}

@@ -4,18 +4,17 @@ var gulp = require('gulp');
 var nodemon = require('gulp-nodemon');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
+var gutil = require('gulp-util');
 
 gulp.paths = {
-  scripts: ['routes/*.js',
-    'specs/**/*.js',
-    'gulp/*.js',
+  scripts: ['gulp/*.js',
     'app.js',
     'gulpfile.js',
-    'public/file-upload/file-upload-controller.js',
-    'public/file-upload/file-upload-directives.js',
-    'public/file-upload/file-upload-service.js',
+    'public/file-upload/*.js',
+    'public/file-list/*.js',
     'public/router.js',
-    'config/*.js'
+    'config/*.js',
+    'app/**/*.js'
   ],
 };
 
@@ -24,10 +23,12 @@ gulp.task('sourceIntegration', function () {
   return gulp.src(['./public/router.js',
       './public/file-upload/file-upload-controller.js',
       './public/file-upload/file-upload-directive.js',
-      './public/file-upload/file-upload-service.js'
+      './public/file-upload/file-upload-service.js',
+      './public/file-list/file-list-controller.js',
+      './public/file-list/file-list-service.js'
     ])
     .pipe(concat('./public/source-integrated-file.js'))
-    .pipe(uglify())
+    .pipe(uglify().on('error', gutil.log))
     .pipe(gulp.dest('./'));
 });
 
