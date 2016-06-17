@@ -1,0 +1,16 @@
+{
+  "name": "s3_uploader",
+  "description": "Training application in node using mongodb and fake s3",
+  "main": "app.js",
+  "authors": [
+    "chinmayan"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/chinmayan/s3Uploader",
+  "dependencies": {
+    "angular": "angularjs#^1.5.6",
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.6.3",
+    "angular-ui-router": "^0.3.1"
+  }
+}

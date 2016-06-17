@@ -1,6 +1,13 @@
 'use strict';
-console.log('server started');
+var express = require('express');
+var logger = require('morgan');
+var routes = require('./app/routes');
+var app = express();
 
-function test() {
-  console.log('gulp - space after a function worked!'); // body...
-};
+app.use(logger('dev'));
+app.use(express.static(__dirname + '/public'));
+app.use(routes);
+
+app.listen(3000, function () {
+  
+});
