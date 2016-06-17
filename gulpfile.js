@@ -1,15 +1,41 @@
 'use strict';
 
 var gulp = require('gulp');
+var nodemon = require('gulp-nodemon');
+var uglify = require('gulp-uglify');
+var concat = require('gulp-concat');
 
 gulp.paths = {
   scripts: ['routes/*.js',
     'specs/**/*.js',
     'gulp/*.js',
     'app.js',
-    'gulpfile.js'
+    'gulpfile.js',
+    'public/file-upload/file-upload-controller.js',
+    'public/file-upload/file-upload-directives.js',
+    'public/file-upload/file-upload-service.js',
+    'public/router.js',
+    'config/*.js'
   ],
 };
+
+gulp.task('sourceIntegration', function () {
+
+  return gulp.src(['./public/router.js',
+      './public/file-upload/file-upload-controller.js',
+      './public/file-upload/file-upload-directive.js',
+      './public/file-upload/file-upload-service.js'
+    ])
+    .pipe(concat('./public/source-integrated-file.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('start', ['beautify', 'sourceIntegration'], function () {
+  nodemon({
+    scripts: './bin/www'
+  });
+});
 
 /**
  * separating gulp tasks concerns inside the gulp dir
