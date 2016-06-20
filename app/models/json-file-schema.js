@@ -1,9 +1,15 @@
-'use strict';
-
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var jsonObjectSchema = new Schema({
+var jsonFileSchema = new Schema({
+  documentName: {
+    type: String,
+    required: true
+  },
+  sheetName: {
+    type: String,
+    required: true
+  },
   categoryID: {
     type: String,
     required: true
@@ -18,18 +24,6 @@ var jsonObjectSchema = new Schema({
   metaDescription: {
     type: String
   }
-});
-
-var jsonFileSchema = new Schema({
-  documentName: {
-    type: String,
-    required: true
-  },
-  sheetName: {
-    type: String,
-    required: true
-  },
-  jsonObject: jsonObjectSchema
 }, {
   timestamps: true
 });

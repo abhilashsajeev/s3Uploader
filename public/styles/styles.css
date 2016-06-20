@@ -1,0 +1,96 @@
+body {
+  background-color: lightgray;
+  color: black;
+}
+
+.alert-danger {
+  width: 480px;
+  display: inline-block;
+}
+
+.btn-choose {
+  font-size: 27px;
+}
+
+.form-control {
+  height: 42px;
+  font-size: 18px;
+  /*width: 280px;*/
+}
+
+
+
+.vertical-center-body input[type=submit] {
+  display: inline-block;
+  width: 150px;
+}
+
+.align-center-div {
+    text-align: center;
+}
+
+.navbar-default {
+    background-color: #2F4F4F;
+    border-color: transparent;
+}
+
+.navbar-default .navbar-nav li a {
+  font-size: 15px;
+  color: white;
+}
+
+.navbar-default .navbar-brand {
+    font-size: 20px;
+    color: white;
+}
+
+.btn-default {
+  border-color: black;
+}
+
+
+.navbar-brand b {
+  font-size: 25px;
+  color:white;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+.vertical-center-body {
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 10%;
+}
+
+.vertical-center-show-all {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.vertical-center-body input[type=file] {
+  display: inline-block;
+}
+
+.vertical-center-body h1 {
+  font-size: 50px;
+  font-family: cursive;
+}
+
+.table-head-style {
+  background-color: gray;
+}
+
+.react-bs-table, .react-bs-container-body{
+  height:inherit!important;
+}
+
+
+.navbar-header a:link {
+  color: white !important;
+}
+
+
+.nav a:link {
+  color: white !important;
+}

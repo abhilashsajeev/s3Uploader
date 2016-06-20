@@ -34,3 +34,5 @@ node_modules
 
 # Git ignore
 uploads
+public/js/home.js
+public/dest/
